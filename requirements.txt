@@ -8,6 +8,7 @@ mistralai
 langchain
 langchain-community
 langchain-core
+langchain-groq
 
 # Vector Database
 faiss-cpu
