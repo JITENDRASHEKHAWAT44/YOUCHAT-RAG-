@@ -23,8 +23,12 @@ pypdf
 # Environment Variables
 python-dotenv
 
-# Frontend
+# Frontend / UI
 streamlit
+
+# API Server
+fastapi
+uvicorn
 
 # Utilities
 numpy
