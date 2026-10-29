@@ -2,6 +2,8 @@
 
 Chat with any YouTube video — just paste a link, and ask questions about what was actually said in it.
 
+🌐 **Live Demo:** [YouChat RAG — AI Grounded Video Intelligence](https://frontend-beta-five-44.vercel.app/)
+
 YOUCHAT pulls a video's captions, indexes them with embeddings in FAISS, and answers your questions using **only** that transcript — no guessing, no hallucinated facts. If the answer isn't in the video, it tells you so.
 
 ---
@@ -13,16 +15,19 @@ YOUCHAT_RAG/
 ├── frontend/                   # Modern React + Vite + Tailwind CSS frontend
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── Navbar.jsx           # Top header with health status, model picker & controls
+│   │   │   ├── Navbar.jsx           # Top header with health status & controls
 │   │   │   ├── VideoPanel.jsx       # Video URL input, embed player, library shelf, suggestions
 │   │   │   ├── ChatPanel.jsx        # Conversation stream, markdown rendering, citations
 │   │   │   └── TranscriptDrawer.jsx # Timestamped caption inspector with search & copy
 │   │   ├── services/
-│   │   │   └── api.js               # Client API methods
+│   │   │   └── api.js               # Client API methods (supports VITE_API_URL)
 │   │   ├── App.jsx                  # Main application orchestrator
 │   │   └── index.css                # Tailwind CSS styling & animations
 │   ├── package.json
+│   ├── vercel.json                  # SPA routing configuration for Vercel
 │   └── vite.config.js               # Vite config with proxy to backend
+├── api/
+│   └── main.py                 # Render / Uvicorn compatibility entrypoint
 ├── server.py                   # High-performance FastAPI backend server
 ├── app.py                      # Original Streamlit app (Mistral AI)
 ├── app1.py                     # Streamlit app (Groq + Mistral embeddings)
@@ -45,7 +50,13 @@ YOUCHAT_RAG/
 
 ---
 
-## Quick Start (Modern React Frontend + FastAPI Backend)
+## Live Deployment
+
+- **Frontend (Vercel):** [https://frontend-beta-five-44.vercel.app/](https://frontend-beta-five-44.vercel.app/)
+
+---
+
+## Quick Start (Local Development)
 
 ### 1. Setup Python Environment & Backend
 
