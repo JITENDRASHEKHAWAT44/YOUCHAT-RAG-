@@ -1,4 +1,5 @@
-const API_BASE = '/api';
+const BACKEND_URL = import.meta.env.VITE_API_URL || '';
+const API_BASE = `${BACKEND_URL.replace(/\/$/, '')}/api`;
 
 export async function checkHealth() {
   try {
